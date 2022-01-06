@@ -1,19 +1,6 @@
 
 <?php
-// $target_dir = "uploads/";
-// $target_file = $target_dir . basename($_FILES["filename"]["name"]);
-// $uploadOk = 1;
-// $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-//if(isset($_POST["submit"])) {
-//   $check = getimagesize($_FILES["filename"]["tmp_name"]);
-//   if($check !== false) {
-//     echo "File is an image - " . $check["mime"] . ".";
-//     $uploadOk = 1;
-//   } else {
-//     echo "File is not an image.";
-//     $uploadOk = 0;
-//   }
+
     include "connect.php";
 
 $name = $_POST['personname'];
@@ -60,20 +47,7 @@ if($largest!=-1){
                     $insert->bind_param("sssssii",$fileName,$now,$name,$currentHash,$prevHash,$longTime,$nonce);
                     $insert->execute();
 
-                    // $maxID=-1;
-                    // $chat = $db->prepare("select * from images");
-                    // $chat->execute();
-                    // $chat_result=$chat->get_result();
-                    // while($id=$chat_result->fetch_array()){
-                    //     if($id['id']>$maxID){
-                    //         $maxID=$id['id'];
-                    //     }
-                    // }
-                    // if($maxID!=-1){
-                    //     $null="";
-                    //     $chat = $db->prepare("insert into chat(message,imageID) values(?,?)");
-                    //     $chat ->bind_param("si",$null,$maxID);
-                    // }
+                   
                     if($insert){
                         $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
                     }else{

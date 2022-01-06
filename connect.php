@@ -2,9 +2,9 @@
 
         // Database configuration
     $Host     = "localhost";
-    $Username = "dave(2)";
-    $Password = "ensf409";
-    $Name     = "imagechain";
+    $Username = "";
+    $Password = "";
+    $Name     = "";
 
     // Create database connection
     $db = new mysqli($Host, $Username, $Password, $Name);
